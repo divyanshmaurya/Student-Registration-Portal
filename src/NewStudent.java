@@ -229,6 +229,7 @@ public class NewStudent extends javax.swing.JFrame {
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void adminIdTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminIdTextActionPerformed

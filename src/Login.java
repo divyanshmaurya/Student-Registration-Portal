@@ -32,7 +32,7 @@ public class Login extends javax.swing.JFrame {
         passwordLabel = new javax.swing.JLabel();
         passwordText = new javax.swing.JPasswordField();
         adminIdText = new javax.swing.JTextField();
-        fogetButton = new javax.swing.JButton();
+        forgetButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,7 +55,7 @@ public class Login extends javax.swing.JFrame {
 
         adminIdText.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        fogetButton.setText("Forget Password");
+        forgetButton.setText("Forget Password");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,7 +76,7 @@ public class Login extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
-                        .addComponent(fogetButton)))
+                        .addComponent(forgetButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -93,7 +93,7 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginButton)
-                    .addComponent(fogetButton))
+                    .addComponent(forgetButton))
                 .addContainerGap())
         );
 
@@ -159,7 +159,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminIdLabel;
     private javax.swing.JTextField adminIdText;
-    private javax.swing.JButton fogetButton;
+    private javax.swing.JButton forgetButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel passwordLabel;
