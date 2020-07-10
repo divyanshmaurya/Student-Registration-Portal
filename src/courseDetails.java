@@ -6,7 +6,7 @@
 
 /**
  *
- * @author anki0
+ * @author ankita
  */
 public class courseDetails extends javax.swing.JFrame {
 

@@ -6,7 +6,7 @@
 
 /**
  *
- * @author anki0
+ * @author ankita
  */
 public class splash extends javax.swing.JFrame {
 

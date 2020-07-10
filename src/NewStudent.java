@@ -6,7 +6,7 @@
 
 /**
  *
- * @author anki0
+ * @author ankita
  */
 public class NewStudent extends javax.swing.JFrame {
 
@@ -28,7 +28,6 @@ public class NewStudent extends javax.swing.JFrame {
 
         list1 = new java.awt.List();
         jPanel1 = new javax.swing.JPanel();
-        durationCombo = new javax.swing.JComboBox<>();
         referenceLabel = new javax.swing.JLabel();
         contactText = new javax.swing.JTextField();
         emailText = new javax.swing.JTextField();
@@ -47,13 +46,11 @@ public class NewStudent extends javax.swing.JFrame {
         backButton = new javax.swing.JButton();
         adminIdLabel = new javax.swing.JLabel();
         courseLabel = new javax.swing.JLabel();
+        fatherNameText = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registration", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(0, 102, 102))); // NOI18N
-
-        durationCombo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        durationCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         referenceLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         referenceLabel.setText("Reference");
@@ -87,7 +84,7 @@ public class NewStudent extends javax.swing.JFrame {
         nameLabel.setText("Name");
 
         durationLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        durationLabel.setText("Duration");
+        durationLabel.setText("Father's Name");
 
         contactLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         contactLabel.setText("Contact Number");
@@ -108,6 +105,11 @@ public class NewStudent extends javax.swing.JFrame {
 
         semesterCombo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         semesterCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        semesterCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semesterComboActionPerformed(evt);
+            }
+        });
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -134,31 +136,31 @@ public class NewStudent extends javax.swing.JFrame {
                             .addComponent(referenceLabel)
                             .addComponent(courseLabel)
                             .addComponent(nameLabel)
-                            .addComponent(semesterLabel)
                             .addComponent(emailLabel)
                             .addComponent(contactLabel)
                             .addComponent(durationLabel)
-                            .addComponent(adminIdLabel))
+                            .addComponent(adminIdLabel)
+                            .addComponent(semesterLabel))
                         .addGap(80, 80, 80)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailText, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(adminIdText)
-                                    .addComponent(referenceText)
-                                    .addComponent(courseCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(nameText)
-                                    .addComponent(semesterCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(durationCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(contactText, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(adminIdText, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(referenceText, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(courseCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nameText, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(semesterCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(contactText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(searchButton))
-                            .addComponent(emailText, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(fatherNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addComponent(registerButton)
                         .addGap(73, 73, 73)
                         .addComponent(backButton)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,14 +182,14 @@ public class NewStudent extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel)
                     .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(durationLabel)
+                    .addComponent(fatherNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(semesterLabel)
                     .addComponent(semesterCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(durationLabel)
-                    .addComponent(durationCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(contactLabel)
@@ -239,9 +241,11 @@ public class NewStudent extends javax.swing.JFrame {
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        Login ob = new Login();
-        ob.setVisible(true);
     }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void semesterComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semesterComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semesterComboActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,10 +290,10 @@ public class NewStudent extends javax.swing.JFrame {
     private javax.swing.JTextField contactText;
     private javax.swing.JComboBox<String> courseCombo;
     private javax.swing.JLabel courseLabel;
-    private javax.swing.JComboBox<String> durationCombo;
     private javax.swing.JLabel durationLabel;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailText;
+    private javax.swing.JTextField fatherNameText;
     private javax.swing.JPanel jPanel1;
     private java.awt.List list1;
     private javax.swing.JLabel nameLabel;
