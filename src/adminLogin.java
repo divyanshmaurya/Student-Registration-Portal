@@ -1,3 +1,7 @@
+
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -32,7 +36,7 @@ public class adminLogin extends javax.swing.JFrame {
         adminIdText = new javax.swing.JTextField();
         adminIDLabel = new javax.swing.JLabel();
         passwordText = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        loginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,9 +48,14 @@ public class adminLogin extends javax.swing.JFrame {
 
         adminIDLabel.setText("Admin Id");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 102));
-        jButton1.setText("Login");
+        loginButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        loginButton.setForeground(new java.awt.Color(0, 102, 102));
+        loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,9 +63,10 @@ public class adminLogin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(logo)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(loginButton)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(logo)
                         .addGap(38, 38, 38)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(adminIDLabel)
@@ -64,10 +74,7 @@ public class adminLogin extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(adminIdText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                            .addComponent(adminIdText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -84,9 +91,9 @@ public class adminLogin extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(passwordLabel)
-                            .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                            .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(loginButton)
                 .addContainerGap())
         );
 
@@ -95,6 +102,42 @@ public class adminLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        // TODO add your handling code here:
+       // System.out.println("clicked");
+         try{
+             DB_Operation DB = new DB_Operation();
+             String user,pass;
+             
+             user= adminIdText.getText();
+             pass = passwordText.getText();
+             
+             ResultSet rs= DB.searchQuery("SELECT * FROM admins WHERE username='"+user+"' AND password='"+pass+"'");
+             
+             if(rs.isBeforeFirst())
+             {
+                 while(rs.next()){
+                     if(rs.getString(1).equalsIgnoreCase(user)&&rs.getString(2).equalsIgnoreCase(pass)){
+                         adminOptions ao= new adminOptions();
+                         ao.setVisible(true);
+                         this.dispose();
+                         
+                     }
+                 }
+             }
+             else{
+                 JOptionPane.showMessageDialog(this,"Invalid Username Or Password");
+                 
+             }
+         }
+         catch(Exception ex)
+         {
+             System.out.println("Exception "+ex.getMessage());
+         }
+    }//GEN-LAST:event_loginButtonActionPerformed
+
+   
+    
     /**
      * @param args the command line arguments
      */
@@ -134,8 +177,8 @@ public class adminLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminIDLabel;
     private javax.swing.JTextField adminIdText;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton loginButton;
     private javax.swing.JLabel logo;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JPasswordField passwordText;

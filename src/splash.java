@@ -1,3 +1,7 @@
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -60,6 +64,11 @@ public class splash extends javax.swing.JFrame {
         image.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/registration.jpg"))); // NOI18N
         image.setText("jLabel4");
+        image.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageMouseClicked(evt);
+            }
+        });
 
         theEduLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         theEduLabel.setForeground(new java.awt.Color(0, 102, 102));
@@ -125,6 +134,15 @@ public class splash extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowActivated
 
+    private void imageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageMouseClicked
+        // TODO add your handling code here:
+        select option = new select();
+        this.setVisible(false);
+        option.setVisible(true);
+        
+        option.setLocationRelativeTo(null);
+    }//GEN-LAST:event_imageMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -156,22 +174,10 @@ public class splash extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new splash().setVisible(true);
-//                int i;
-//                int x=1;
-//                for(i=2;i<=600;i+=4,x+=1){
-//                    f.setLocation((800-((i+x)/2)),500-(i/2));
-//                    f.setSize(i+3*x,i+x/2);
-//
-//                    try
-//                    {
-//                        Thread.sleep(10);
-//                    }
-//                    catch(Exception e)
-//                    {
-//
-//                    }
-//                }
+                splash sp= new splash();
+                sp.setVisible(true);
+                sp.setLocationRelativeTo(null);
+                   
             }
         });
     }

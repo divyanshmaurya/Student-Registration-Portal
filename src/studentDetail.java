@@ -36,7 +36,7 @@ public class studentDetail extends javax.swing.JFrame {
         contactLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         nameText = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         semsterLabel = new javax.swing.JLabel();
         contactText = new javax.swing.JTextField();
         rollNoLabel = new javax.swing.JLabel();
@@ -65,9 +65,9 @@ public class studentDetail extends javax.swing.JFrame {
 
         nameText.setEditable(false);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 102));
-        jButton1.setText("Back");
+        backButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        backButton.setForeground(new java.awt.Color(0, 102, 102));
+        backButton.setText("Back");
 
         semsterLabel.setText("Semester");
 
@@ -106,7 +106,7 @@ public class studentDetail extends javax.swing.JFrame {
                             .addComponent(contactText, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1)
+                        .addComponent(backButton)
                         .addGap(12, 12, 12)))
                 .addContainerGap())
         );
@@ -146,7 +146,7 @@ public class studentDetail extends javax.swing.JFrame {
                     .addComponent(contactLabel)
                     .addComponent(contactText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(jButton1)
+                .addComponent(backButton)
                 .addContainerGap())
         );
 
@@ -200,12 +200,14 @@ public class studentDetail extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new studentDetail().setVisible(true);
+//                new studentDetail().setVisible(true);
+                  
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel contactLabel;
     private javax.swing.JTextField contactText;
     private javax.swing.JLabel courseLabel;
@@ -214,7 +216,6 @@ public class studentDetail extends javax.swing.JFrame {
     private javax.swing.JTextField emailText;
     private javax.swing.JLabel fatherLabel;
     private javax.swing.JTextField fatherText;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField nameText;

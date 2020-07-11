@@ -39,10 +39,25 @@ public class select extends javax.swing.JFrame {
         adminButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         adminButton.setForeground(new java.awt.Color(0, 102, 102));
         adminButton.setText("Admin");
+        adminButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminButtonMouseClicked(evt);
+            }
+        });
 
         studentButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         studentButton.setForeground(new java.awt.Color(0, 102, 102));
         studentButton.setText("Student");
+        studentButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                studentButtonMouseClicked(evt);
+            }
+        });
+        studentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,6 +126,27 @@ public class select extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void studentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentButtonActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_studentButtonActionPerformed
+
+    private void adminButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButtonMouseClicked
+        // TODO add your handling code here:
+        adminOptions ao = new adminOptions();
+        this.setVisible(false);
+        ao.setVisible(true);
+        ao.setLocationRelativeTo(null);
+    }//GEN-LAST:event_adminButtonMouseClicked
+
+    private void studentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentButtonMouseClicked
+        // TODO add your handling code here:
+        studentOptions so = new studentOptions();
+        this.setVisible(false);
+        so.setVisible(true);
+        so.setLocationRelativeTo(null);
+    }//GEN-LAST:event_studentButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -141,7 +177,10 @@ public class select extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new select().setVisible(true);
+                 select s= new select();
+                 //new select().setVisible(true);
+                 s.setVisible(true);
+                 s.setLocationRelativeTo(null);
             }
         });
     }

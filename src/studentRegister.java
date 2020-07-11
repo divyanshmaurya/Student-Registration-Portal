@@ -39,7 +39,7 @@ public class studentRegister extends javax.swing.JFrame {
         courseCombo = new javax.swing.JComboBox<>();
         courseLabel = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        passwordLabel = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         registerButton = new javax.swing.JButton();
 
@@ -71,7 +71,7 @@ public class studentRegister extends javax.swing.JFrame {
 
         emailLabel.setText("Email Id");
 
-        jLabel1.setText("Password");
+        passwordLabel.setText("Password");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,7 +93,7 @@ public class studentRegister extends javax.swing.JFrame {
                             .addComponent(emailLabel)
                             .addComponent(contactLabel)
                             .addComponent(courseLabel)
-                            .addComponent(jLabel1))
+                            .addComponent(passwordLabel))
                         .addGap(56, 56, 56)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(contactText)
@@ -127,7 +127,7 @@ public class studentRegister extends javax.swing.JFrame {
                     .addComponent(emailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(passwordLabel)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -239,11 +239,11 @@ public class studentRegister extends javax.swing.JFrame {
     private javax.swing.JTextField emailText;
     private javax.swing.JLabel fatherLabel;
     private javax.swing.JTextField fatherText;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel passwordLabel;
     private javax.swing.JButton registerButton;
     private javax.swing.JLabel studentLabel;
     private javax.swing.JTextField studentText;

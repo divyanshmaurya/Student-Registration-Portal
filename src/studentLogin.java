@@ -35,7 +35,7 @@ public class studentLogin extends javax.swing.JFrame {
         passwordLabel = new javax.swing.JLabel();
         emailIdLabel = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        registerButton = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -61,9 +61,9 @@ public class studentLogin extends javax.swing.JFrame {
         loginButton.setForeground(new java.awt.Color(0, 102, 102));
         loginButton.setText("Login");
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 102, 102));
-        jButton2.setText("Register");
+        registerButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        registerButton.setForeground(new java.awt.Color(0, 102, 102));
+        registerButton.setText("Register");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -77,7 +77,7 @@ public class studentLogin extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(loginButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(registerButton)
                         .addGap(65, 65, 65))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(passwordLabel)
@@ -107,7 +107,7 @@ public class studentLogin extends javax.swing.JFrame {
                         .addComponent(logo)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(registerButton)
                     .addComponent(loginButton))
                 .addContainerGap())
         );
@@ -160,12 +160,12 @@ public class studentLogin extends javax.swing.JFrame {
     private javax.swing.JLabel emailIdLabel;
     private javax.swing.JTextField emailIdText;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel logo;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JTextField passwordText;
+    private javax.swing.JButton registerButton;
     // End of variables declaration//GEN-END:variables
 }
