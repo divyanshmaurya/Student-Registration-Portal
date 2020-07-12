@@ -63,13 +63,17 @@ public class admin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        submitButton.setText("Submit");
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search / Update", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(0, 102, 102))); // NOI18N
+
+        submitButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        submitButton.setText("Update");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
             }
         });
 
+        backButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +81,7 @@ public class admin extends javax.swing.JFrame {
             }
         });
 
+        deleteButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,8 +95,8 @@ public class admin extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(submitButton)
+                .addGap(6, 6, 6)
                 .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -108,18 +113,27 @@ public class admin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        passwordText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        passwordLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         passwordLabel.setText("Password");
 
+        nameText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         nameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTextActionPerformed(evt);
             }
         });
 
+        emailText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        nameLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         nameLabel.setText("Name");
 
+        emailIdLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         emailIdLabel.setText("Email Id");
 
+        searchButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         searchButton.setText("Search");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +141,10 @@ public class admin extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("Id");
+
+        idText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -242,7 +259,7 @@ public class admin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,10 +303,11 @@ public class admin extends javax.swing.JFrame {
             String adminMail = emailText.getText();
             String password = passwordText.getText();
 
-            String sql = "INSERT INTO admin (mail, password, name) values ('"+adminMail+"','"+password+"','"+adminName+"')";
+//            String sql = "INSERT INTO admin (mail, password, name) values ('"+adminMail+"','"+password+"','"+adminName+"')";
+            String sql ="UPDATE admin set mail ='"+adminMail+"',password='"+password+"',name='"+adminMail+"' ";
 
             stmt.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null, "Admin added successfully");
+            JOptionPane.showMessageDialog(null, "Admin details Updated successfully");
         }
         catch(Exception e)
         {

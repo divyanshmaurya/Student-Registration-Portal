@@ -71,21 +71,41 @@ public class addStudent extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Add Student", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(0, 102, 102))); // NOI18N
 
+        bloodCombo.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         bloodCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "AB+", "AB-", "B+", "B-", "O+", "O-" }));
 
+        addressText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        fatherLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         fatherLabel.setText("Father's Name");
 
+        courseLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         courseLabel.setText("Course");
 
+        fatherText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        emailText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        addressLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         addressLabel.setText("Address");
 
+        phoneText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        bloodLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         bloodLabel.setText("Blood");
 
+        emailLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         emailLabel.setText("Email");
 
+        nameText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        phoneLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         phoneLabel.setText("Phone");
 
+        nameLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         nameLabel.setText("Name");
+
+        courseText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -147,6 +167,7 @@ public class addStudent extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        backButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,6 +175,7 @@ public class addStudent extends javax.swing.JFrame {
             }
         });
 
+        submitButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
