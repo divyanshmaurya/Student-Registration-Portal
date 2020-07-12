@@ -6,7 +6,7 @@
 
 /**
  *
- * @author anki0
+ * @author ankita
  */
 public class home extends javax.swing.JFrame {
 
@@ -14,6 +14,7 @@ public class home extends javax.swing.JFrame {
      * Creates new form home
      */
     public home() {
+        super("Student Registration Portal");
         initComponents();
     }
 
@@ -159,20 +160,21 @@ public class home extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(120, 120, 120)
+                .addGap(132, 132, 132)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -195,20 +197,18 @@ public class home extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
+                        .addContainerGap()
                         .addComponent(addStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, 0))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
+                .addGap(6, 6, 6)
                 .addComponent(addStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(0, 0, 0))
         );
@@ -246,7 +246,7 @@ public class home extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel3.setText("Update Student Details");
 
-        studentOpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/update-1.png"))); // NOI18N
+        studentOpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/update (1).png"))); // NOI18N
         studentOpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 studentOpButtonActionPerformed(evt);
@@ -371,13 +371,6 @@ public class home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStudentButtonActionPerformed
-        // TODO add your handling code here:
-                setVisible(false);
-                addStudent object = new addStudent();
-                object.setVisible(true);
-    }//GEN-LAST:event_addStudentButtonActionPerformed
-
     private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
         // TODO add your handling code here:
                 setVisible(false);
@@ -399,14 +392,6 @@ public class home extends javax.swing.JFrame {
                 object.setVisible(true);
     }//GEN-LAST:event_showStudentButtonActionPerformed
 
-    private void studentOpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentOpButtonActionPerformed
-        // TODO add your handling code here:
-        
-                setVisible(false);
-                student object = new student();
-                object.setVisible(true);
-    }//GEN-LAST:event_studentOpButtonActionPerformed
-
     private void showAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAdminButtonActionPerformed
         // TODO add your handling code here:
                 setVisible(false);
@@ -421,11 +406,26 @@ public class home extends javax.swing.JFrame {
                 object.setVisible(true);
     }//GEN-LAST:event_adminOpButtonActionPerformed
 
+    private void addStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStudentButtonActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        addStudent object = new addStudent();
+        object.setVisible(true);
+    }//GEN-LAST:event_addStudentButtonActionPerformed
+
+    private void studentOpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentOpButtonActionPerformed
+        // TODO add your handling code here:
+
+        setVisible(false);
+        student object = new student();
+        object.setVisible(true);
+    }//GEN-LAST:event_studentOpButtonActionPerformed
+
     private void addAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAdminButtonActionPerformed
         // TODO add your handling code here:
-                setVisible(false);
-                addAdmin object = new addAdmin();
-                object.setVisible(true);
+        setVisible(false);
+        addAdmin object = new addAdmin();
+        object.setVisible(true);
     }//GEN-LAST:event_addAdminButtonActionPerformed
 
     /**

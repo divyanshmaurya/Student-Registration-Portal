@@ -24,7 +24,7 @@ public class admin extends javax.swing.JFrame {
     ResultSet rs= null;
     
     public admin() {
-        super("Admin");
+        super("Student Registration Portal");
         initComponents();
         conn = databaseConnection.connection();
         
@@ -66,6 +66,7 @@ public class admin extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search / Update", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(0, 102, 102))); // NOI18N
 
         submitButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        submitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/update (2).png"))); // NOI18N
         submitButton.setText("Update");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +75,7 @@ public class admin extends javax.swing.JFrame {
         });
 
         backButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back.png"))); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +84,7 @@ public class admin extends javax.swing.JFrame {
         });
 
         deleteButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        deleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/delete.png"))); // NOI18N
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,10 +100,10 @@ public class admin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(submitButton)
                 .addGap(6, 6, 6)
-                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,6 +137,7 @@ public class admin extends javax.swing.JFrame {
         emailIdLabel.setText("Email Id");
 
         searchButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/search (1).png"))); // NOI18N
         searchButton.setText("Search");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,7 +205,7 @@ public class admin extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                        .addGap(35, 35, 35)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -274,6 +278,9 @@ public class admin extends javax.swing.JFrame {
 
     private void homeMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeMenuItemActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        home object = new home();
+        object.setVisible(true);
     }//GEN-LAST:event_homeMenuItemActionPerformed
 
     private void logoutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutMenuItemActionPerformed

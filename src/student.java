@@ -26,7 +26,7 @@ public class student extends javax.swing.JFrame {
     
     
     public student() {
-        super("Student");
+        super("Student Registration Portal");
         initComponents();
         conn = databaseConnection.connection();
 
@@ -76,22 +76,46 @@ public class student extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 24), new java.awt.Color(0, 102, 102))); // NOI18N
 
+        addressText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        fatherLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         fatherLabel.setText("Father's Name");
 
+        courseLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         courseLabel.setText("Course");
 
+        fatherText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        emailText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        addressLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         addressLabel.setText("Address");
 
+        phoneText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        bloodLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         bloodLabel.setText("Blood");
 
+        emailLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         emailLabel.setText("Email");
 
+        nameText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        phoneLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         phoneLabel.setText("Phone");
 
+        nameLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         nameLabel.setText("Name");
 
+        courseText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        studentIdLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         studentIdLabel.setText("Student Id");
 
+        studentIdText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        idSearchButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        idSearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/search (1).png"))); // NOI18N
         idSearchButton.setText("Search");
         idSearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,12 +123,16 @@ public class student extends javax.swing.JFrame {
             }
         });
 
+        emailSearchButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        emailSearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/search (1).png"))); // NOI18N
         emailSearchButton.setText("Search");
         emailSearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailSearchButtonActionPerformed(evt);
             }
         });
+
+        bloodText.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -134,8 +162,8 @@ public class student extends javax.swing.JFrame {
                     .addComponent(bloodText, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(idSearchButton)
-                    .addComponent(emailSearchButton))
+                    .addComponent(emailSearchButton)
+                    .addComponent(idSearchButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -178,6 +206,8 @@ public class student extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        backButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back.png"))); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,6 +215,8 @@ public class student extends javax.swing.JFrame {
             }
         });
 
+        updateButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        updateButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/update (2).png"))); // NOI18N
         updateButton.setText("Update");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,6 +224,8 @@ public class student extends javax.swing.JFrame {
             }
         });
 
+        deleteButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        deleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/delete.png"))); // NOI18N
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,12 +238,12 @@ public class student extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(deleteButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backButton)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -220,7 +254,7 @@ public class student extends javax.swing.JFrame {
                     .addComponent(updateButton)
                     .addComponent(backButton)
                     .addComponent(deleteButton))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -232,9 +266,9 @@ public class student extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(74, 74, 74)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,14 +324,14 @@ public class student extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -305,6 +339,11 @@ public class student extends javax.swing.JFrame {
 
     private void homeMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeMenuItemActionPerformed
         // TODO add your handling code here:
+        
+        setVisible(false);
+        home object = new home();
+        object.setVisible(true);
+        
     }//GEN-LAST:event_homeMenuItemActionPerformed
 
     private void logoutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutMenuItemActionPerformed
