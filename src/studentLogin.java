@@ -19,6 +19,7 @@ public class studentLogin extends javax.swing.JFrame {
     Connection conn= null;
     Statement stmt= null;
     ResultSet rs= null;
+    public static String e="";
     /**
      * Creates new form studentLogin
      */
@@ -186,16 +187,16 @@ public class studentLogin extends javax.swing.JFrame {
             stmt = conn.createStatement();
             String userEmail= emailText.getText();
             String userPass= passwordText.getText();
-            
-            String sql= "SELECT * FROM admin WHERE mail='"+userEmail+"' && password = '"+userPass+"' ";
+            e=userEmail;
+            String sql= "SELECT * FROM studentlogin WHERE mail='"+userEmail+"' && password = '"+userPass+"' ";
             
             rs = stmt.executeQuery(sql);
             if(rs.next())
             {
                 setVisible(false);
-                home object = new home();
-                object.setVisible(true);
-                object.setLocationRelativeTo(null);
+                new studentDetails(userEmail).setVisible(true);
+//                object.setVisible(true);
+//                object.setLocationRelativeTo(null);
             }else
             {
                 JOptionPane.showMessageDialog(null,"Password or email is incorrect");
