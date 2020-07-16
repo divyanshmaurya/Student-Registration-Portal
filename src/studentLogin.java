@@ -1,3 +1,9 @@
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,11 +16,17 @@
  */
 public class studentLogin extends javax.swing.JFrame {
 
+    Connection conn= null;
+    Statement stmt= null;
+    ResultSet rs= null;
     /**
      * Creates new form studentLogin
      */
     public studentLogin() {
+        super("Student Registration Portal");
         initComponents();
+        
+        conn = databaseConnection.connection();
     }
 
     /**
@@ -86,9 +98,19 @@ public class studentLogin extends javax.swing.JFrame {
 
         cancelButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
 
         loginButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -157,6 +179,41 @@ public class studentLogin extends javax.swing.JFrame {
     private void passwordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordTextActionPerformed
+
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        // TODO add your handling code here:
+        try{
+            stmt = conn.createStatement();
+            String userEmail= emailText.getText();
+            String userPass= passwordText.getText();
+            
+            String sql= "SELECT * FROM admin WHERE mail='"+userEmail+"' && password = '"+userPass+"' ";
+            
+            rs = stmt.executeQuery(sql);
+            if(rs.next())
+            {
+                setVisible(false);
+                home object = new home();
+                object.setVisible(true);
+                object.setLocationRelativeTo(null);
+            }else
+            {
+                JOptionPane.showMessageDialog(null,"Password or email is incorrect");
+            }
+            
+        }catch(Exception e)
+        {
+            System.out.println("Error login"+ e);
+        }
+    }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+        // TODO add your handling code here:
+                setVisible(false);
+                about object = new about();
+                object.setVisible(true);
+                object.setLocationRelativeTo(null);
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
     /**
      * @param args the command line arguments
