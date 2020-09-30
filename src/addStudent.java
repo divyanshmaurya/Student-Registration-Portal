@@ -22,7 +22,7 @@ public class addStudent extends javax.swing.JFrame {
     
     
     public addStudent() {
-        super("Student Registration Portal");
+        super("Registration Portal for Students");
         initComponents();
         conn = databaseConnection.connection();
     }
